@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+			.nav{
+				background-color: #2658b6;
+
+			}
+			.Image_animation {width:100%; height:0px; padding-bottom: 38%; overflow:hidden; position:relative; }
+			.Image_animation img{ position:absolute; animation:Image_animation 20s infinite; opacity:0; width: 100%; height: auto;}
+
+			@keyframes Image_animation {25%{opacity:1;} 40%{opacity:0;}}
+			.Image_animation img:nth-child(4){animation-delay:0s;}
+			.Image_animation img:nth-child(3){animation-delay:5s;}
+			.Image_animation img:nth-child(2){animation-delay:10s;}
+			.Image_animation img:nth-child(1){animation-delay:15s;}
+
+			.menu{
+				display: inline-block;
+				height: 10%;
+				position: relative;
+				top: 90%;
+				left: 0;
+				width: 100%;
+				text-align: center;
+			}
+
+			/* .outer:hover{
+				border-bottom: solid rgba(20, 67, 220, 0.61);
+				border-bottom-width: 2px;
+				border-left: solid rgba(20, 67, 220, 0.61);
+				border-left-width: 3px;
+				border-bottom-left-radius: 12px;
+				transition: 0s;
+			} */
+			.SOT,.SPT,.SPM,.SLS,.SOT_BRANCH,.SPT_BRANCH,.SLS_BRANCH,.SPM_BRANCH{
+				color: rgba(139, 0, 139, 0.836);
+				display: flex;
+				flex-wrap :wrap;
+				font-weight: 600;
+				background-color: rgba(245, 245, 245, 0.322);
+				padding: 3px;	
+			}
+
+			.BLC{
+				color: rgb(204, 0, 255);
+				border-bottom-right-radius: 30px;
+				border-top-left-radius: 20px;
+				background-color: rgba(159, 241, 112, 0.507);
+				width: 200px;
+				height: 70px;
+				padding: 10px;
+				margin: 10px;
+				transition: 1s;
+			}
+			.BLC1{
+				
+				text-justify: auto;
+				color: rgba(139, 0, 139, 0.836);
+				/* color: rgb(204, 0, 255); */
+				border-bottom-right-radius: 15px;
+				border-top-left-radius: 9px;
+				background-color: rgba(159, 241, 112, 0.507);
+				width: 90px;
+				height: 40px;
+				margin: 5px;
+				transition: 1s;
+
+			}
+			.BLC1:hover{
+				font-weight: bold;
+				color: white;
+				box-shadow: 1px 1px 2px 2px rgba(255, 251, 0, 0.63);
+				/* background-color: rgb(204, 0, 255) */
+				background-color: rgb(145, 10, 235);
+				transition: 1s;
+				transform: scale(1.07);
+
+			}
+			.BLC:hover{
+				
+				font-weight: bold;
+				color: white;
+				box-shadow: 1px 1px 2px 2px rgba(255, 251, 0, 0.63);
+				/* background-color: rgb(204, 0, 255) */
+				background-color: rgba(145, 10, 235, 0.726);
+				transition: 1s;
+				transform: scale(1.07);
+			}
+			body{
+				background-color: lightgray;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			.link{
+				text-decoration: none;
+				color: #2658b6;
+			}
+
+			/* Dropdown Button */
+			/* menu buttons */
+			.dropbtn {
+			  background-color: #2658b6;
+			  color: white;
+			  padding: 16px;
+			  font-size: 16px;
+			  font-weight: 500;
+			  border-top-left-radius: 7px;
+			  border-top-right-radius: 7px;
+			}
+
+			/* The container <div> - needed to position the dropdown content */
+			.whole_dropdown {
+			  position: relative;
+			  display: inline-block;
+			}
+
+			/* Dropdown Content (Hidden by Default) */
+
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  min-width: 100px;
+			  box-shadow: 0px 8px 8px 0px rgba(22, 202, 193, 0.596);
+			  z-index: 1;
+			}
+
+
+			/* Links inside the dropdown */
+			/* ac--> ac--->box  */
+			.dropdown-content a {
+			  color: rgb(140, 11, 245);
+			  padding: 12px 26px;
+			  margin-bottom: 10px;
+			  text-decoration: none;
+			  display: block;
+			}
+
+			.dropdown-content a:hover {background-color: rgb(204, 0, 255);} /*ac--> ac--> school-back*/
+
+			/* Show the dropdown menu on hover */
+			.whole_dropdown:hover .dropdown-content {display: block;} /*ac---> ac*/
+
+			/* Change the background color of the dropdown button when the dropdown content is shown */
+			.whole_dropdown:hover .dropbtn {background-color:  #1d76fca4;} /*bc-color----> menubtn*/
+
+
+
+
+
+			.dropb {
+			  background-color: rgb(225, 240, 145); /*whole dropdoenbg*/
+			  color:black;  /*text in main dropdown*/
+			  padding: 16px;
+			  font-size: 16px;
+			  display: inline;
+			  border: none;
+			}
+
+			/* The container <div> - needed to position the dropdown content */
+			/*whole dropdown*/
+			.drop {
+			  position: relative;
+			  display: block;
+			}
+
+			/* Dropdown Content (Hidden by Default) */
+			/* admi-->sot-->box outside bg*/
+			.drop-content {
+			  display: none;
+			  position: absolute;
+			  background-color: white;
+			  max-width: 300%;
+			  box-shadow: 0px 4px 4px 0px rgb(74, 216, 209);
+			  z-index: 1;
+			}
+			.drop-content a{
+				padding: 10px;
+				margin:10px;
+			}
+			/* Links inside the dropdown */
+			/*admissions-->*/
+			
+
+			/* Change color of dropdown links on hover */
+			
+
+			/* Show the dropdown menu on hover */
+			.drop:hover .drop-content {display: inline-block;width:750px;}
+			/*sot img-->hover*/
+			/* Change the background color of the dropdown button when the dropdown content is shown */
+			.drop:hover .dropb {background-color: #4194f3;}
+
+			.dro {
+			  position: relative;
+			  display: inline-block;
+			}
+
+			/* Dropdown Content (Hidden by Default) */
+			/*small dropdown academics-->academics*/
+			.dro-content {
+			  display: none;
+			  position: absolute;
+			  background-color: white;
+			  max-width: 500%;
+			  box-shadow: 0px 4px 4px 0px rgba(22, 202, 193, 0.596);
+			  z-index: 1;
+			}
+
+			/* Show the dropdown menu on hover */
+			.dro:hover .dro-content {display: inline-block;}
+			/*acdemics--->hover*/
+			/* Change the background color of the dropdown button when the dropdown content is shown */
+			.dro:hover .dropb {background-color: #4194f3;}
+
+
+
+			.temp{
+				display: flex;
+				padding: 5px;
+				justify-content: center;
+			}
+			.updates {
+			 height: 200px;  
+			 background-color: #E7DFEB;
+			 overflow: hidden;
+			 position: relative;
+			 width:320px;
+			 max-width: 320px;
+			}
+			.updates div{
+			 font-size: medium;
+			 color: #2658b6;
+			 position: absolute;
+			 font-weight: 400px;
+			 margin: 5%;
+			 line-height: 30px;
+			 text-align: justify;
+			 /* Starting position */
+			 -moz-transform:translateY(100%);
+			 -webkit-transform:translateY(100%);    
+			 transform:translateY(100%);
+			 /* Apply animation to this element */  
+			 -moz-animation: updates 0s linear infinite;
+			 -webkit-animation: updates 0s linear infinite;
+			 animation: updates 25s linear infinite;
+			}
+			.link:hover{
+				color: rgba(0, 0, 0, 0.788);
+			}
+			/* Move it (define the animation) */
+			@-moz-keyframes updates {
+			 0%   { -moz-transform: translateY(100%); }
+			 100% { -moz-transform: translateY(-100%); }
+			}
+			@-webkit-keyframes updates {
+			 0%   { -webkit-transform: translateY(100%); }
+			 100% { -webkit-transform: translateY(-100%); }
+			}
+			@keyframes updates {
+			 0%   { 
+			 -moz-transform: translateY(100%); /* Firefox bug fix */
+			 -webkit-transform: translateY(100%); /* Firefox bug fix */
+			 transform: translateY(100%);       
+			 }
+			 100% { 
+			 -moz-transform: translateY(-100%); /* Firefox bug fix */
+			 -webkit-transform: translateY(-100%); /* Firefox bug fix */
+			 transform: translateY(-100%); 
+			 }
+			}
+
+			.cupdates{
+				background-color: #2658b6;
+				width: 80%;
+				padding: 10px;
+				position: relative;
+				margin-top: 3%;
+				font-size: 16px;
+				font-weight: 500;
+				display: flex;
+			}
+
+			.cupdates:hover{
+				background-color: #4194f3;
+				box-shadow: 0px 8px 8px 0px rgba(22, 202, 193, 0.596);
+			}
+
+			.cupdates a{
+				color: white;
+			}
+
+			.beforeHover{
+				text-align: justify;
+				font-weight: bolder;
+				font-weight: 400px;
+				font-family: monospace;
+				color: white;
+				align-content: center;
+				background-image: url("https://www.pdpu.ac.in/images/tagBg.jpg");
+				width: 200px;
+				height: 100px;
+				padding: 10px;
+			}
+			.infoblk{
+				display: block;
+				height:100px;
+				width:200px;
+				padding:10px;
+				margin: 20px;
+				/* /background-color: rgb(0, 204, 255); */
+				
+			}
+			.flex{
+				display: flex;
+				flex-wrap: wrap;
+				max-width: 600px;
+				justify-content: center;
+			}
+
+			.afterHover {
+			  display: none;
+			  font-size: small;
+			  color: white;
+			  text-align: left;
+			  background-image: url("https://www.pdpu.ac.in/images/tagBg.jpg");
+				width: 200px;
+				height: 125px;
+				padding: 10px;
+			}
+			    
+			.infoblk:hover > .beforeHover {
+			  display: none;
+			}
+			.infoblk:hover > .afterHover {
+			  display: block;
+			}
+
+			.foot{
+				background-color: rgba(0, 0, 0, 0.87);
+				color: #FFFFFF;
+				width: 100%;
+				height: auto;
+				text-align: left;
+				padding-top: 10px;
+				margin-top: 20px;
+			}
+
+			.table{
+				padding: 10px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.td{
+				display: block;
+				height: 200px;
+				width: auto;
+				padding: 20px;
+			}
+			.foot a{
+				color: #8d8c8c;
+				font-size: 13px;
+				margin-top: 25px;
+				text-decoration: none;
+			}
+
+			.foot a:hover{
+				color: #FFFFFF;
+			}
+
+			@media only screen and (max-width: 1250px) {
+			  .drop-content {
+			  max-width: 200%;
+			}
+			}
+
+	</style>
+	<title>Pandit Deendayal Petroleum University</title>
+	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/7/73/Pandit_Deendayal_Petroleum_University_logo.jpg" type="image/icon type">
+</head>
+<body>
+	<!-- header -->
+	<div class="nav">
+		<img src="https://www.pdpu.ac.in/images/logo.png"> 
+	</div>
+	<!-- header over -->
+
+
+
+	<!-- minislide -->
+	<div class="Image_animation">
+	  <img src="https://www.pdpu.ac.in/images/Home%20Page-07.jpg" alt="PDPU_IMAGE">
+	  <img src="https://www.pdpu.ac.in/events/18/2.jpg" alt="PDPU_IMAGE">
+	  <img src="https://gubkin.uz/uploads/Pandit%20Deendayal%20Petroleum%20University/Pandit%20Deendayal%20Petroleum%20University.jpg" alt="PDPU_IMAGE">
+	  <img src="https://www.pdpu.ac.in/images/Banner_7th_convo_1.jpg" alt="PDPU_IMAGE">
+	</div>
+	<!-- minislide over -->
+
+
+	<br>
+	<!-- menu bar -->
+	<div class="menu">
+		<div class="whole_dropdown">
+		  <div class="dropbtn">Admissions</div>
+		  <div class="dropdown-content">
+		  	<div class="drop">
+		  		<button class="dropb"><img src="https://www.pdpu.ac.in/images/SOT2.png"></button>
+		  		<div class="drop-content">
+		  			<div class="outer">
+
+						<div class="SOT_BRANCH" >
+							<a href="#" class="BLC">
+								Computer science and Engineering(B.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Electrical Engineering(B.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Mechanical Engineering(B.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Chemical Engineering(B.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Information and Communication Technology(B.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Civil Engineering(B.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Solar Enery
+							</a>
+							<a href="#" class="BLC">
+								Nuclear science and Technology
+							</a>
+							<a href="#" class="BLC">
+								Chemical Engineering(M.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Environmental Engineering(M.Tech)
+							</a>
+							<a href="#" class="BLC">
+								Civil Engineering(Infrastructure Engg. & Management-M.Tech)
+							</a>
+							<a href="#" class="BLC">
+								Electrical Engineering(Power System-M.Tech)
+							</a>
+							<a href="#" class="BLC">
+								Mechanical Engineering(Thermal-M.Tech)
+							</a>
+							<a href="#" class="BLC">
+								Physics Department
+							</a>
+							<a href="#" class="BLC">
+								Chemistry Department
+							</a>
+							<a href="#" class="BLC">
+								Maths Department
+							</a>
+						</div>
+					</div>
+		  		</div>
+		  	</div>
+		  	<div class="drop">
+		  		<button class="dropb"><img src="https://www.pdpu.ac.in/images/SPT2.png"></button>
+		  		<div class="drop-content">
+		  			<div class="outer">
+						<div class="SPT_BRANCH" >
+							<a href="#" class="BLC">
+								Petroleum Engineering(B.Tech.)
+							</a>
+							<a href="#" class="BLC">
+								Petroleum Engineering(M.Tech.)
+							</a>
+						</div>
+					</div>
+		  		</div>
+		  	</div>
+		  	<div class="drop">
+		  		<button class="dropb"><img src="https://www.pdpu.ac.in/images/SLS2.png"></button>
+		  		<div class="drop-content">
+		  			<div  class="outer">
+						<div class="SLS_BRANCH" >
+							<a href="#" class="BLC">
+								BA/BBA
+							</a>
+							<a href="#" class="BLC">
+								B.Com
+							</a>
+							<a href="#" class="BLC">
+								B.Sc
+							</a>
+							<a href="#" class="BLC">
+								M.Sc Finance
+							</a>
+							<a href="#" class="BLC">
+								Economics(M.A.)
+							</a>
+							<a href="#" class="BLC">
+								Media and Communication(M.A.)
+							</a>
+							<a href="#" class="BLC">
+								Psycology(M.A.)
+							</a>
+							<a href="#" class="BLC">
+								Engish Literature(M.A.)
+							</a>
+							<a href="#" class="BLC">
+								Political Science & Internation Relations(M.A.)
+							</a>
+							<a href="#" class="BLC">
+								Public Administration(M.A.)
+							</a>
+						</div>
+					</div>
+		  		</div>
+		  	</div>
+		  	<div class="drop">
+		  		<button class="dropb"><img src="https://www.pdpu.ac.in/images/SPM2.png"></button>
+		  		<div class="drop-content">
+		  			<div class="outer">
+						<div class="SPM_BRANCH" >
+							<a href="#" class="BLC">
+							GERMY
+							</a>
+							<a href="#" class="BLC">
+							IPSC
+							</a>
+						</div>
+					</div>
+		  		</div>
+		  	</div>
+		  </div>
+		</div>
+		<div class="whole_dropdown">
+			<div class="dropbtn">Academics</div>
+			<div class="dropdown-content">
+				<div class="dro">
+					<button class="dropb">Academics&nbsp;</button>
+						<div class="dro-content">
+							<div class="outer"><a href="#" class="BLC1">Schools</a></div>
+							<div class="outer"><a href="#" class="BLC1">Internships</a></div>
+							<div class="outer"><a href="#" class="BLC1">Library</a></div>
+							<div class="outer"><a href="#" class="BLC1"> Capsule Course</a></div>
+							<div class="outer"><a href="#" class="BLC1">Guest Speakers</a></div>
+						</div>
+				</div>
+				<div class="dro">
+					<button class="dropb">Programes&nbsp;</button>
+					<div class="dro-content">
+						<div class="outer"><a href="#" class="BLC1">Engineering Programes</a></div>
+						<div class="outer"><a href="#" class="BLC1">Management Programes</a></div>
+						<div class="outer"><a href="#" class="BLC1">Liberal Studies</a></div>
+						<div class="outer"><a href="#" class="BLC1">Counting Education</a></div>
+					</div>
+				</div>
+				<div class="dro">
+					<button class="dropb">Faculty &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</button>
+					<div class="dro-content">
+						<div class="outer"><a href="#" class="BLC1">Technology</a></div>
+						<div class="outer"><a href="#" class="BLC1">Management </a></div>
+						<div class="outer"><a href="#" class="BLC1">Liberal Studies</a></div>
+						<div class="outer"><a href="#" class="BLC1">Petroleum Technology</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="whole_dropdown">
+			<div class="dropbtn">Placements</div>
+			<div class="dropdown-content">
+				<div class="dro">
+					<button class="dropb">Career Development Cell</button>
+						<div class="dro-content">
+							<div class="outer"><a href="#" class="BLC1">Placements</a></div>
+							<div class="outer"><a href="#" class="BLC1">Internships</a></div>
+							<div class="outer"><a href="#" class="BLC1">Industial Training</a></div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="whole_dropdown">
+			<div class="dropbtn">Campus Life</div>
+			<div class="dropdown-content">
+				<div class="dro">
+					<button class="dropb">Infrastructure</button>
+						<div class="dro-content">
+							<div class="outer"><a href="#" class="BLC1">Infrastructure</a></div>
+							<div class="outer"><a href="#" class="BLC1">Housing</a></div>
+							<div class="outer"><a href="#" class="BLC1">Laboratory</a></div>
+						</div>
+				</div>
+				<div class="dro">
+					<button class="dropb"> &nbsp;Campus Life</button>
+					<div class="dro-content">
+						<div class="outer"><a href="#" class="BLC1">Living in Gandhinagar</a></div>
+						<div class="outer"><a href="#" class="BLC1">Hostel Life</a></div>
+						<div class="outer"><a href="#" class="BLC1">Wellness Center</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="whole_dropdown">
+			<div class="dropbtn">Student Activities</div>
+			<div class="dropdown-content">
+				<div class="dro">
+					<button class="dropb">Office of Students Activities(OSAIL)</button>
+						<div class="dro-content">
+							<div class="outer"><a href="#" class="BLC1">About OSAIL</a></div>
+							<div class="outer"><a href="#" class="BLC1">Missions and Objectives</a></div>
+							<div class="outer"><a href="#" class="BLC1">Initiative</a></div>
+							<div class="outer"><a href="#" class="BLC1"> Contact Us</a></div>
+							<div class="outer"><a href="#" class="BLC1">OSAIL Annual Report</a></div>
+						</div>
+				</div>
+				<div class="dro">
+					<button class="dropb">&nbsp;Student Clubs &nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<div class="dro-content">
+						<div class="outer"><a href="#" class="BLC1">Social and Cultural</a></div>
+						<div class="outer"><a href="#" class="BLC1">Science & Technical</a></div>
+						<div class="outer"><a href="#" class="BLC1">Sports Club</a></div>
+					</div>
+				</div>
+				<div class="dro">
+					<button class="dropb">Events and Activities</button>
+					<div class="dro-content">
+						<div class="outer"><a href="#" class="BLC1">Event Calender</a></div>
+						<div class="outer"><a href="#" class="BLC1">Flare </a></div>
+						<div class="outer"><a href="#" class="BLC1">Tesseracct</a></div>
+						<div class="outer"><a href="#" class="BLC1">Rangtaal</a></div>
+						<div class="outer"><a href="#" class="BLC1">TEDx PDPU</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="whole_dropdown">
+			<div class="dropbtn">Internationalisation</div>
+			<div class="dropdown-content">
+				<div class="dro">
+					<button class="dropb">Office of International Relation(OIR)</button>
+						<div class="dro-content">
+							<div class="outer"><a href="#" class="BLC1">About OIR</a></div>
+							<div class="outer"><a href="#" class="BLC1">Missions and Objectives</a></div>
+							<div class="outer"><a href="#" class="BLC1">International Affliations</a></div>
+							<div class="outer"><a href="#" class="BLC1"> Contact Us</a></div>
+						</div>
+				</div>
+				<div class="dro">
+					<button class="dropb">Institutional Centric Activities</button>
+					<div class="dro-content">
+						<div class="outer"><a href="#" class="BLC1">Global Collaborations</a></div>
+						<div class="outer"><a href="#" class="BLC1">Study In India Program(SIP)</a></div>
+						<div class="outer"><a href="#" class="BLC1">International Visitors</a></div>
+						<div class="outer"><a href="#" class="BLC1">International Events</a></div>
+					</div>
+				</div>
+				<div class="dro">
+					<button class="dropb">Student Centric Activities</button>
+					<div class="dro-content">
+						<div class="outer"><a href="#" class="BLC1">Explosure Program(IPE)</a></div>
+						<div class="outer"><a href="#" class="BLC1">Travel Grant</a></div>
+						<div class="outer"><a href="#" class="BLC1">IAESTE @ PDPU</a></div>
+						<div class="outer"><a href="#" class="BLC1">International Students</a></div>
+						<div class="outer"><a href="#" class="BLC1">AIESEC @ PDPU</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- menu bar over -->
+
+
+	
+	<div class="temp">
+		<div class="flex">
+			<div class="infoblk">
+				<div class="beforeHover">IPE PDPU</div>
+				<div class="afterHover">The University has been facilitating one to two months exposure program titled as
+					 International Exchange Program (IEP) since 2010 with Partner
+					  International Universities during Summer Vacations of each year. </div>
+			</div>
+			<div class="infoblk">
+				<div class="beforeHover">PETROCUP</div>
+				<div class="afterHover">Every year PDPU organizes an Annual Inter-College Sports Festival-
+					“PETROCUP” it boasts itself as a messenger to spread an aura of sportsmanship,
+					intensity, and competition with a message to “LEARN, PLAY AND WIN”</div>
+			</div>
+			<div class="infoblk">
+				<div class="beforeHover">RANGTAAL</div>
+				<div class="afterHover">The festival of garba, dandiya, music, colours and traditional dresses,
+					Navratri is the most awaited Festival in Gujarat. PDPU marks the celebration of this festival by Rangtaal,
+					organised and managed by the Social and Cultural Committee</div>
+			</div>
+			<div class="infoblk">
+				<div class="beforeHover">WOMEN'S CELL PDPU</div>
+				<div class="afterHover">PDPU Women’s Cell has been established at the behest
+					of Director General, Pandit Deendayal Petroleum University to ensure and uphold the dignity of Women at work.
+					Objective is To develop critical thinking ability of women students.</div>
+			</div>
+			<div class="infoblk">
+				<div class="beforeHover">TEDx PDPU</div>
+				<div class="afterHover">TEDxPDPU was a full day event curated by The Office of Student Activities,
+					Involvement & Leadership and Mind~Ripple-
+					The quizzing club of PDPU in which various speakers from various platforms came together to create a memorable experience.</div>
+			</div>
+			<div class="infoblk">
+				<div class="beforeHover">GERMY</div>
+				<div class="afterHover">GERMI has established two research wings-
+					Petroleum and Renewable Energy.
+					The Petroleum Wing has two major groups.</div>
+			</div>
+		</div>
+		<div>
+			<h2>PDPU UPDATES</h2>
+			<div class="updates">
+				<div>
+					<a href="#" class="link">Ministry of Human Resources Development, Goverment of India</a>
+					<hr>
+					<a href="#" class="link">E-Commerce Market: Reliance Jio-Facebook Partnership Challenge to Amazon, Walmart-Flipkart</a>
+					<hr>
+					<a href="#" class="link">Post Coronavirus World-Technology Imperativs: Make in India for self reliance</a>
+					<h3>New Programs Launches:</h3>
+					<hr>
+					<a href="#" class="link">B.Tech Automobile Engineering</a>
+					<hr>
+					<a href="#" class="link">B.Tech Electronics & Communication Engineering</a>
+					<hr>
+					<a href="#" class="link">M.Tech-Cyber Security</a>
+					<hr>
+					<a href="#" class="link">M.Tech-Data Science</a>
+					<hr>
+					<a href="#" class="link">M.Tech-Material Science & Enfineering</a>
+					<hr>
+					<a href="#" class="link">M BAJA 2019-Report</a>
+					<hr>
+					<a href="#" class="link">E BAJA 2019-Report</a>
+					<hr>
+					<a href="#" class="link">Journal of Energy and Management</a>
+					<hr>
+					<a href="#" class="link">Center for Counseling Services</a>
+					<hr>
+				</div>
+			</div>
+			<h2 id="c">COVID-19 Quick Links</h2>
+			<div class="cupdates">
+				<a href="#" class="link">Covid-19 World Meter</a>
+			</div>
+			<div class="cupdates">
+				<a href="#" class="link">Covid-19 India Meter(State wise)</a>
+			</div>
+			<div class="cupdates">
+				<a href="#" class="link">WHO Official Website</a>
+			</div>
+			<div class="cupdates">
+				<a href="#" class="link">WHO Updates</a>
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Footer-->
+	<div class="foot">
+		<div class="table">
+			<div class="td">
+				THE UNIVERSITY<br>
+				<a href="#">ADMISSIONS</a><br>
+				<a href="#">ACADEMICS</a><br>
+				<a href="#">RESEARCH</a><br>
+				<a href="#">CAMPUS LIFE</a><br>
+				<a href="#">INTERNATIONALISATION</a><br>
+				<a href="#">PRIVACY POLICY</a><br>
+			</div>
+			<div class="td">
+				QUICK LINKS<br>
+				<a href="#">PDPU</a><br>
+				<a href="#">CONTACT</a><br>
+				<a href="#">MULTIMEDIA</a><br>
+				<a href="#">DOWNLOADS</a><br>
+				<a href="#">TENDER</a><br>
+				<a href="#">PLACEMENTS</a><br>
+			</div>
+			<div class="td">
+				FACTSHEET<br>
+				<a href="#">REPORTS</a><br>
+				<a href="#">PUBLIC</a><br>
+				<a href="#">NOTICE</a><br>
+				<a href="#">RECOGNITION</a><br>
+				<a href="#">TERMS OF USE</a><br>
+			</div>
+			<div class="td">
+				EMERGENCY INFO<br>
+				<a href="#">WOMEN'S CELL</a><br>
+				<a href="#">CENTRE FOR COUNSELING</a><br>
+				<a href="#">ANTI RAGGING</a><br>
+				<a href="#">ANTI RAGGING CIRCULAR</a><br>
+			</div>
+			<div class="td">
+				PDPU SCHOOLS<br>
+				<a href="#">MANAGEMENT</a><br>
+				<a href="#">PETROLEUM</a><br>
+				<a href="#">TECHNOLOGY</a><br>
+				<a href="#">LIBERAL STUDIES</a><br>
+			</div>
+		</div>
+	</div>
+	<footer> Designed and developed by <a href = "mailto: pallav.cce18@sot.pdpu.ac.in">18BCP072</a>|
+	<a href = "mailto: Paritosh.jce18@sot.pdpu.ac.in">18BCP074</a>|
+	<a href = "mailto: purv.pce18@sot.pdpu.ac.in">18BCP088</a>|
+	<a href = "mailto: pallav.cce18@sot.pdpu.ac.in">18BCP039</a>
+	</footer>
+	<script>
+		var link=document.getElementsByTagName("a");
+		var b=link.length;
+		var cnt=[];
+		cnt.length=b;
+		// cnt[0]=0;
+		// link[0].addEventListener("click", function(){
+		// 	cnt[0]++;
+		// 	alert(link[0].innerText + "clicked " + cnt[0] + " times");
+		// });
+		for(let i=0;i<b;i++)
+		{
+			cnt[i]=0;
+			link[i].addEventListener("click", function(){
+				cnt[i]++;
+				alert(link[i].innerText + "clicked " + cnt[i] + " times");
+			})
+		}
+
+	</script>
+</body>
+</html>
